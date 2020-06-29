@@ -25,7 +25,7 @@ class CreateTransactionService {
       const getTotalBalance = await transactionsRepository.getBalance();
 
       if (value > getTotalBalance.total) {
-        throw new AppError('Transaction without a valid balance!', 400);
+        throw new AppError('Transaction without a valid balance!');
       }
     }
 
