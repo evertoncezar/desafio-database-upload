@@ -29,6 +29,10 @@ class Transaction {
   @JoinColumn({ name: 'category_id' })
   category_id: string;
 
+  @ManyToOne(() => Category, category => category.transaction, { eager: true }) // funcionalidade de eager loading, para trazer os dados dos relacionamentos no modelo
+  @JoinColumn({ name: 'category_id' })
+  category: Category;
+
   @CreateDateColumn()
   created_at: Date;
 
